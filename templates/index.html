@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% set anzahl_personen = namen | length %}
+
+<hr>
+
+<h1>Hallo</h1>
+<p>Ich bin normaler Text</p>
+<p>{{variable}}</p>
+
+<p>{{dict_data["name"]}} ist {{dict_data["age"]}} Jahre alt</p>
+
+{% if variable > 10 %}
+<p>Variable ist größer als 10</p>
+{% else %}
+<p>Variable ist NICHT größer als 10</p>
+{% endif %}
+
+<h2>Anzahhl Personen: {{anzahl_personen}}</h2>
+{% for name in namen %}
+<p>Name {{loop.index}}: {{name | upper}}</p>
+{% endfor %}
+{% endblock content %}
